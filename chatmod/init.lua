@@ -33,7 +33,6 @@ if minetest.setting_get('chatmod.time_format') ~= nil then
 	format_string = minetest.setting_get('chatmod.time_format')
 	format_string = string.sub(format_string, 2) -- remove leading "
 	format_string = string.sub(format_string, 1, -2) -- remove trailing "
-	print("format string set to: "..format_string)
 end
 
 if minetest.setting_getbool('chatmod.chatlog_enabled') ~= nil then
