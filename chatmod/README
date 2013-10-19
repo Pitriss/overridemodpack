@@ -1,0 +1,34 @@
+ChatMod
+
+This mod provide timestamps in ingame chat with configurable formatting.
+It also provide configurable chat logging in game. All configuration is done
+by adding lines into minetest.conf.
+
+Possible setting:
+
+chatmod.time_format = <STRING>
+
+This option allows to change appearance of chat timestamp. <STRING> can be any strftime syntax ( http://www.cplusplus.com/reference/ctime/strftime/). Default value is %T. This timeformat don't
+touch format of timestamp in logfile which is in unix timestamp, to be able to process logs by
+PHP or other scripts for use in webpages.
+
+
+
+chatmod.chatlog_enabled = <BOOL>
+
+This option is boolean value enabling chat logging. Default value is false.
+
+
+chatmod.chatlog_autorotate = <BOOL>
+
+This option is also boolean and true will enable chatlog monthly rotation. Final chatlog filename
+will be YYYY-MM-chatlog.txt.
+
+
+chatmod.chatlog_path = <STRING>
+
+This option allows to change destination path for chatlog.
+
+Licence: WTFPL
+
+Credits: Thanks to fairiestoy for basic timestamp code and chatlog mod for general idea.
