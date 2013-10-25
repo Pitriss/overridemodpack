@@ -1,3 +1,6 @@
 [submodule "mapp"]
 	path = mapp
 	url = https://github.com/Pitriss/mapp.git
+[submodule "modmenu"]
+	path = modmenu
+	url = https://github.com/bhull2010/minetest-mod-modmenu.git
