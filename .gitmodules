@@ -4,3 +4,6 @@
 [submodule "modmenu"]
 	path = modmenu
 	url = https://github.com/bhull2010/minetest-mod-modmenu.git
+[submodule "wield3d"]
+	path = wield3d
+	url = https://github.com/stujones11/wield3d.git
