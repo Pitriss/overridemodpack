@@ -21,7 +21,6 @@ if munin_enabled then
 			end
 			local players = minetest.get_connected_players()
 			local player_count = table.getn(players)
-			local status_splitted = {}
 			local status = minetest.get_server_status()
 			local status_splitted = {}
 			for k, v in string.gmatch(status, "([_%w]+)=([%w%.]+)") do
