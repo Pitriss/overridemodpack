@@ -17,22 +17,26 @@ else
 	while read LINE; do
 		case $COUNT in
 			0)
-				echo "PlayerCap.label $LINE"
+				echo "PlayerCap.label Player cap"
+				echo "PlayerCap.value $LINE"
 				echo "PlayerCap.draw STACK"
 				COUNT=$((COUNT+1))
 			;;
 			1)
-				echo "PlayersConnected.label $LINE"
+				echo "PlayersConnected.label Connected players"
+				echo "PlayersConnected.value $LINE"
 				echo "PlayersConnected.draw STACK"
 				COUNT=$((COUNT+1))
 			;;
 			2)
-				echo "MaxLag.label $LINE"
+				echo "MaxLag.label Maximal lag"
+				echo "MaxLag.value $LINE"
 				echo "MaxLag.draw LINE"
 				COUNT=$((COUNT+1))
 			;;
 			3)
-# 				echo "Uptime.label $line"
+# 				echo "Uptime.label Uptime"
+# 				echo "Uptime.value $LINE"
 # 				echo "Uptime.draw LINE"
 				COUNT=$((COUNT+1))
 			;;
