@@ -96,7 +96,9 @@ minetest.register_node("tricorder:tricorder", {
 			ppos = {x = math.floor(pos.x),y = math.floor(pos.y),z = math.floor(pos.z)}
 			minetest.chat_send_player(name, 'Tricorder: pointing at Air from '..minetest.pos_to_string(ppos))
 			local current_light = minetest.get_node_light(pos)
-			minetest.chat_send_player(name, 'Tricorder: Light level is '..current_light)
+			if current_light ~= nil and current_light > 0 then
+				minetest.chat_send_player(name, 'Tricorder: Light level is '..current_light)
+			end
 		end
 		local ores_found = {}
 		for i,n in ipairs(searches) do
