@@ -13,13 +13,13 @@ if [ "$1" = "config" ] ; then
 	echo 'graph_args --base 1000 -l 0 '
 	echo "PlayerCap.label Player cap"
 	echo "PlayerCap.draw AREA"
-	echo "PlayerCap.color 6DFF90"
+	echo "PlayerCap.colour 6DFF90"
 	echo "PlayersConnected.label Connected players"
 	echo "PlayersConnected.draw AREA"
-	echo "PlayersConnected.color FF0000"
+	echo "PlayersConnected.colour FF0000"
 	echo "MaxLag.label Maximal lag"
 	echo "MaxLag.draw LINE"
-	echo "MaxLag.color 0066B3"
+	echo "MaxLag.colour 0066B3"
 
 ## Uptime is commented out, because high
 ## numbers will break whole graph
