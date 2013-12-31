@@ -8,4 +8,8 @@ munin.enabled = true
 
 into your minetest.conf file
 
+Directory munin-plugin contains bash and ruby version of plugin for munin monitoring.
+
+Ruby one is more advanced as it can detect crashed minetest and put zero values into graph.
+
 Licence: WTFPL
