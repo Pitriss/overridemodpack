@@ -43,14 +43,14 @@ else
 				echo "MaxLag.value $LINE"
 				COUNT=$((COUNT+1))
 			;;
-			3)
 
 ## Uptime is commented out, because high
 ## numbers will break whole graph
 
+# 			3)
 # 				echo "Uptime.value $LINE"
-				COUNT=$((COUNT+1))
-			;;
+# 				COUNT=$((COUNT+1))
+# 			;;
 		esac
 	done <$WORLDFILE
 fi
