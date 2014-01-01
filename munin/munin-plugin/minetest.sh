@@ -1,5 +1,11 @@
 #!/bin/bash
 
+##################################
+# MT monitoring plugin for munin #
+# Author: Pitriss & Ritchie      #
+# Licence: WTFPL                 #
+##################################
+
 # Path to munin.txt
 WORLDFILE="/opt/minetest/world/classic_technic_game/munin.txt"
 # Name of world displayed in graph title

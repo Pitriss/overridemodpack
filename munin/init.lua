@@ -7,7 +7,6 @@ if minetest.setting_getbool("munin.enabled") ~= nil then
 	end
 end
 
-
 local last_time = os.time() + 5
 
 function munin_write(status, path)
@@ -32,10 +31,6 @@ if munin_enabled then
 			end
 			local uptime = status_splitted.uptime
 			local max_lag = status_splitted.max_lag
-	-- 		print ("Server info:\nPlayer_cap: "..max_players.."\nPlayers_connected: "..player_count.."\nStatus line: "..status)
-	-- 		minetest.chat_send_all("Server info:\nPlayer_cap: "..max_players.."\nPlayers_connected: "..player_count.."\nUptime: "..uptime.."\nMax_Lag: "..max_lag)
-
-
 			if munin_server_start ~= nil then
 				local status_to_write = max_players.."\n"..player_count.."\n"..max_lag.."\n"..uptime.."\n"..tostring(munin_server_start)
 				local fpath = minetest.get_worldpath().."/munin.txt"
