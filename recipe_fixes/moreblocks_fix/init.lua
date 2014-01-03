@@ -66,3 +66,12 @@ minetest.register_craft({
 		{"moreblocks:wood_tile_center", "default:stick"},
 	}
 })
+
+minetest.register_craft({
+	output = "moreblocks:rope 4",
+	recipe = {
+		{"default:junglegrass", "", "default:junglegrass"},
+		{"default:junglegrass", "", "default:junglegrass"},
+		{"default:junglegrass", "", "default:junglegrass"},
+	}
+})
