@@ -13,3 +13,12 @@ Directory munin-plugin contains bash and ruby version of plugin for munin monito
 Ruby one is more advanced as it can detect crashed minetest and put zero values into graph.
 
 Licence: WTFPL
+
+
+Structure of munin.txt
+
+player cap
+connected players
+max_lag
+uptime
+generation unixtimestamp

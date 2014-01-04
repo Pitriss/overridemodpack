@@ -14,7 +14,7 @@ worldname = "name of game"
 # Maximal possible delay between value in munin.txt and server time in seconds
 # Formula is: servertime - (MTserverstartuptime + MTserveruptime)
 # MTserver should logging every 30s
-max_delay = 90
+max_delay = 60
 
 # colors
 color1 = "6DFF90"
@@ -40,7 +40,7 @@ if  ARGV[0] == "config"
 elsif ARGV[0] == "debug"
 	begin
 		content = IO.readlines(datafile)
-		offset = Time.now.to_i-(content[4].to_i+content[3].to_i)
+		offset = Time.now.to_i-content[4].to_i
 		puts "Max delay is now: #{offset} second(s)"
 	rescue Errno::ENOENT
 		puts "ERROR: Misconfigured path to munin.txt or munin.txt doesn't exist."
@@ -49,7 +49,7 @@ elsif ARGV[0] == "debug"
 	end
 else
 	content = IO.readlines(datafile)
-	offset = Time.now.to_i-(content[4].to_i+content[3].to_i)
+	offset = Time.now.to_i-content[4].to_i
 	if offset > max_delay
 		puts "PlayerCap.value 0"
 		puts "PlayersConnected.value 0"
