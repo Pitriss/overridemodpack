@@ -53,7 +53,7 @@ local function relative_time (time)
 			end
 		end
 		if day_diff == 1 then
-			return "Yesterday"
+			return "yesterday"
 		end
 		if day_diff < 7 then
 			return tostring(day_diff).." days ago"
@@ -83,7 +83,7 @@ local function relative_time (time)
 			end
 		end
 		if day_diff == 1 then
-			return "Tomorrow"
+			return "tomorrow"
 		end
 		if day_diff < 4 then
 			return os.date("%A", time)
