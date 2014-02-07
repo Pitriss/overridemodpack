@@ -59,7 +59,7 @@ local function relative_time (time)
 			return tostring(day_diff).." days ago"
 		end
 		if day_diff < 31 then
-			return tostring(ceil(day_diff/7)).." weeks ago"
+			return tostring(math.ceil(day_diff/7)).." weeks ago"
 		end
 		if day_diff < 60 then
 			return "last month"
