@@ -85,6 +85,12 @@ function chatlog_me_write(time, name, message, path)
 	file_desc:close()
 end
 
+function chatlog_jp_write(time, name, message, path)
+	local file_desc = io.open(path, "a")
+	file_desc:write(time.." -!- "..name.." "..message.."\n")
+	file_desc:close()
+end
+
 minetest.register_on_chat_message( function( name, message )
 	local raw_time = os.time()
 	local formatted_time = os.date(format_string, raw_time)
@@ -108,4 +114,33 @@ minetest.register_on_chat_message( function( name, message )
 	return true
 end )
 
+minetest.register_on_joinplayer( function(player)
+	local raw_time = os.time()
+	local formatted_time = os.date(format_string, raw_time)
+	local name = player:get_player_name()
+	local message = "joined the game."
 
+	if chatlog_autorotate and chatlog then
+		chatlog_name = os.date('%Y-%m-', raw_time)..chatlog_name
+		local full_chatlog_path = chatlog_path..chatlog_name
+		chatlog_jp_write(raw_time, name, message, full_chatlog_path)
+	elseif chatlog then
+		local full_chatlog_path = chatlog_path..chatlog_name
+		chatlog_jp_write(raw_time, name, message, full_chatlog_path)
+	end
+end)
+
+minetest.register_on_leaveplayer(function(player)
+	local raw_time = os.time()
+	local formatted_time = os.date(format_string, raw_time)
+	local name = player:get_player_name()
+	local message = "left the game."
+	if chatlog_autorotate and chatlog then
+		chatlog_name = os.date('%Y-%m-', raw_time)..chatlog_name
+		local full_chatlog_path = chatlog_path..chatlog_name
+		chatlog_jp_write(raw_time, name, message, full_chatlog_path)
+	elseif chatlog then
+		local full_chatlog_path = chatlog_path..chatlog_name
+		chatlog_jp_write(raw_time, name, message, full_chatlog_path)
+	end
+end)
