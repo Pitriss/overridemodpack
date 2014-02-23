@@ -119,6 +119,8 @@ minetest.register_on_joinplayer( function(player)
 	local formatted_time = os.date(format_string, raw_time)
 	local name = player:get_player_name()
 	local message = "joined the game."
+	local tsnotice = formatted_time.." -!- ".. name.." joined the game."
+	minetest.chat_send_all(tsnotice)
 
 	if chatlog_autorotate and chatlog then
 		chatlog_name = os.date('%Y-%m-', raw_time)..chatlog_name
@@ -135,6 +137,8 @@ minetest.register_on_leaveplayer(function(player)
 	local formatted_time = os.date(format_string, raw_time)
 	local name = player:get_player_name()
 	local message = "left the game."
+	local tsnotice = formatted_time.." -!- ".. name.." left the game."
+	minetest.chat_send_all(tsnotice)
 	if chatlog_autorotate and chatlog then
 		chatlog_name = os.date('%Y-%m-', raw_time)..chatlog_name
 		local full_chatlog_path = chatlog_path..chatlog_name
