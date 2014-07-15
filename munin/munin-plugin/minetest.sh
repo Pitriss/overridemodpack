@@ -7,9 +7,9 @@
 ##################################
 
 # Path to munin.txt
-WORLDFILE="/opt/minetest/world/classic_technic_game/munin.txt"
+WORLDFILE=""
 # Name of world displayed in graph title
-WORLDNAME="classic_technic_game"
+WORLDNAME=""
 
 if [ "$1" = "config" ] ; then
 
