@@ -23,7 +23,7 @@ if munin_enabled then
 			local player_count = table.getn(players)
 			local status = minetest.get_server_status()
 			local status_splitted = {}
-			for k, v in string.gmatch(status, "([_%w]+)=([%w%.]+)") do
+			for k, v in string.gmatch(status, "([_%w]+)=([%+%w%.]+)") do
 				status_splitted[k] = v
 			end
 			local uptime = status_splitted.uptime
